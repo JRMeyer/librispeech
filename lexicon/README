@@ -1,0 +1,13 @@
+There are two sets of lexicons here (full vs mini)
+because the original download of Librispeech only
+comes with the full dict for the entire mondo corpus.
+
+So, to make things more manageable, I limit the dict
+to words found in the transcripts of the audio I have.
+
+The audio I have here is just a small section of LibriSpeech.
+
+
+
+# Jan 29, 2018: removed "LL   L" as entry from lexicon (in the transcripts
+# I'LL was mistakenly I LL and WE'LL was WE LL for a couple entries)
