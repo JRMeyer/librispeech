@@ -11,3 +11,53 @@ The audio I have here is just a small section of LibriSpeech.
 
 # Jan 29, 2018: removed "LL   L" as entry from lexicon (in the transcripts
 # I'LL was mistakenly I LL and WE'LL was WE LL for a couple entries)
+
+
+## VOICING NOTES:
+After I collapse voicing, I get pronunciation variants which are identical,
+and this crashes, so I'm throwing out the doubles.
+
+Checking data_libri-voice/local/dict/lexicon.txt
+--> reading data_libri-voice/local/dict/lexicon.txt
+--> ERROR: line 'ABSORPTION AH0 P S AO1 R P SH AH0 N
+' of data_libri-voice/local/dict/lexicon.txt is repeated
+--> ERROR: line 'CLOSE G L OW1 S
+' of data_libri-voice/local/dict/lexicon.txt is repeated
+--> ERROR: line 'CLOSER G L OW1 S ER0
+' of data_libri-voice/local/dict/lexicon.txt is repeated
+--> ERROR: line 'DESOLATE T EH1 S AH0 L AH0 T
+' of data_libri-voice/local/dict/lexicon.txt is repeated
+--> ERROR: line 'EXCUSE IH0 G S G Y UW1 S
+' of data_libri-voice/local/dict/lexicon.txt is repeated
+--> ERROR: line 'EXILE EH1 G S AY2 L
+' of data_libri-voice/local/dict/lexicon.txt is repeated
+--> ERROR: line 'EXILED EH1 G S AY2 L T
+' of data_libri-voice/local/dict/lexicon.txt is repeated
+--> ERROR: line 'EXILES EH1 G S AY2 L S
+' of data_libri-voice/local/dict/lexicon.txt is repeated
+--> ERROR: line 'JOSEPH CH OW1 S AH0 V
+' of data_libri-voice/local/dict/lexicon.txt is repeated
+--> ERROR: line 'OATHS OW1 TH S
+' of data_libri-voice/local/dict/lexicon.txt is repeated
+--> ERROR: line 'RESORT R IY0 S AO1 R T
+' of data_libri-voice/local/dict/lexicon.txt is repeated
+--> ERROR: line 'RESORTS R IY0 S AO1 R T S
+' of data_libri-voice/local/dict/lexicon.txt is repeated
+--> ERROR: line 'USE Y UW1 S
+' of data_libri-voice/local/dict/lexicon.txt is repeated
+--> ERROR: line 'USES Y UW1 S AH0 S
+' of data_libri-voice/local/dict/lexicon.txt is repeated
+--> ERROR: line 'USES Y UW1 S IH0 S
+' of data_libri-voice/local/dict/lexicon.txt is repeated
+--> ERROR: line 'WITH W IH0 TH
+' of data_libri-voice/local/dict/lexicon.txt is repeated
+--> ERROR: line 'WITH W IH1 TH
+' of data_libri-voice/local/dict/lexicon.txt is repeated
+--> ERROR: line 'WITHDRAWING W IH0 TH T R AO1 IH0 NG
+' of data_libri-voice/local/dict/lexicon.txt is repeated
+--> ERROR: line 'WITHDREW W IH0 TH T R UW1
+' of data_libri-voice/local/dict/lexicon.txt is repeated
+--> ERROR: line 'WITHIN W IH0 TH IH1 N
+' of data_libri-voice/local/dict/lexicon.txt is repeated
+--> ERROR: line 'WITHOUT W IH0 TH AW1 T
+' of data_libri-voice/local/dict/lexicon.txt is repeated
