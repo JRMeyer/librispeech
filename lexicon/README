@@ -13,7 +13,7 @@ The audio I have here is just a small section of LibriSpeech.
 # I'LL was mistakenly I LL and WE'LL was WE LL for a couple entries)
 
 
-## VOICING NOTES:
+## VOICING NOTES:     
 
 B P   --> P
 CH JH --> CH
@@ -90,19 +90,19 @@ take out manner, only have place and voicing info left:
 should work with sed in this order:
 
 P F     --> P          voiceless labials
-B M V W --> W      voiced labials
-SH CH   --> CH       voiceless postalveolar
+B M V W --> W          voiced labials
+SH CH   --> CH         voiceless postalveolar
 T S     --> T          voiceless alveolar
-ZH JH   --> JH       voiced postalveolar
+ZH JH   --> JH         voiced postalveolar
 D Z     --> D          voiced alveolar
-NG G    --> G         voiced velar
-N L R   --> R        voiced alveolar2
+NG G    --> G          voiced velar
+N L R   --> R          voiced alveolar2
 # redundant:
-K       --> K            voiceless velar
-HH      --> HH          voiceless glottal
-Y       --> Y            voiced lateral
-TH      --> TH          voiceless dental
-DH      --> DH          voiced dental
+K       --> K          voiceless velar
+HH      --> HH         voiceless glottal
+Y       --> Y          voiced lateral
+TH      --> TH         voiceless dental
+DH      --> DH         voiced dental
 
 sed -Ei 's/F/P/g' manner*;
 sed -Ei 's/B|M|V/W/g'  manner*;
@@ -112,3 +112,34 @@ sed -Ei 's/ZH/JH/g'  manner*;
 sed -Ei 's/Z/D/g'  manner*;
 sed -Ei 's/NG/G/g'  manner*;
 sed -Ei 's/N|L/R/g'  manner*;
+
+
+
+
+## PLACE
+
+
+F TH SH S HH --> F        voiceless fricatives
+V DH Z ZH    --> V        voiced fricatives
+P T K        --> P        voiceless plosives    
+B D G        --> B        voiced plosives
+M N NG       --> N        voiced nasal
+L R          --> R        voiced laterals
+Y W          --> Y        voiced approximants
+JH           --> JH       voiced affricates
+CH           --> CH       voiceless affricates
+
+# hack for vowels AW OW UW
+sed -Ei 's/AW/AX/g' place*;
+sed -Ei 's/OW/OX/g' place*;
+sed -Ei 's/UW/UX/g' place*;
+sed -Ei 's/W/Y/g' place*;
+sed -Ei 's/TH|SH|S|HH/F/g' place*;
+sed -Ei 's/T|K/P/g' place*;
+sed -Ei 's/DH|ZH|Z/V/g' place*;
+sed -Ei 's/D|G/B/g' place*;
+sed -Ei 's/M|NG/N/g' place*;
+sed -Ei 's/L/R/g' place*;
+
+
+
