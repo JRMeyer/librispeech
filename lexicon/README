@@ -112,3 +112,15 @@ sed -Ei 's/ZH/JH/g'  manner*;
 sed -Ei 's/Z/D/g'  manner*;
 sed -Ei 's/NG/G/g'  manner*;
 sed -Ei 's/N|L/R/g'  manner*;
+
+
+# crashes
+
+Checking data_libri-manner/local/dict/lexicon.txt
+--> reading data_libri-manner/local/dict/lexicon.txt
+--> ERROR: line 'ANCIENT EY1 R CH AH0 R T
+' of data_libri-manner/local/dict/lexicon.txt is repeated
+--> ERROR: line 'ANCIENTS EY1 R CH AH0 R T T
+' of data_libri-manner/local/dict/lexicon.txt is repeated
+--> ERROR: line 'MACHETES W AH0 CH EH1 T IY2 D
+' of data_libri-manner/local/dict/lexicon.txt is repeated
