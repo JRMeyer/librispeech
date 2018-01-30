@@ -14,6 +14,24 @@ The audio I have here is just a small section of LibriSpeech.
 
 
 ## VOICING NOTES:
+
+B P   --> P
+CH JH --> CH
+D T   --> T
+DH TH --> TH
+F V   --> F
+G K   --> G
+S Z   --> S
+SH ZH --> SH
+
+sed -Ei "s/B/P/g" filename
+sed -Ei "s/JH/CH/g" filename
+sed -Ei "s/D/T/g" filename # gets DH-->TH as well
+sed -Ei "s/F/V/g" filename
+sed -Ei "s/K/G/g" filename # avoiding G-->K because of NG
+sed -Ei "s/Z/S/g" filename # gets SH-->ZH as well
+
+
 After I collapse voicing, I get pronunciation variants which are identical,
 and this crashes, so I'm throwing out the doubles.
 
@@ -61,3 +79,36 @@ Checking data_libri-voice/local/dict/lexicon.txt
 ' of data_libri-voice/local/dict/lexicon.txt is repeated
 --> ERROR: line 'WITHOUT W IH0 TH AW1 T
 ' of data_libri-voice/local/dict/lexicon.txt is repeated
+
+
+
+## Manner Notes
+
+take out manner, only have place and voicing info left:
+
+
+should work with sed in this order:
+
+P F     --> P          voiceless labials
+B M V W --> W      voiced labials
+SH CH   --> CH       voiceless postalveolar
+T S     --> T          voiceless alveolar
+ZH JH   --> JH       voiced postalveolar
+D Z     --> D          voiced alveolar
+NG G    --> G         voiced velar
+N L R   --> R        voiced alveolar2
+# redundant:
+K       --> K            voiceless velar
+HH      --> HH          voiceless glottal
+Y       --> Y            voiced lateral
+TH      --> TH          voiceless dental
+DH      --> DH          voiced dental
+
+sed -Ei 's/F/P/g' manner*;
+sed -Ei 's/B|M|V/W/g'  manner*;
+sed -Ei 's/SH/CH/g'  manner*;
+sed -Ei 's/S/T/g'  manner*;
+sed -Ei 's/ZH/JH/g'  manner*;
+sed -Ei 's/Z/D/g'  manner*;
+sed -Ei 's/NG/G/g'  manner*;
+sed -Ei 's/N|L/R/g'  manner*;
